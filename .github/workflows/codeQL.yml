@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      # required for all workflows
       security-events: write
       actions: read
       contents: read
@@ -21,8 +20,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
-          # Use the custom CodeQL config file
-          config-file: .github/codeql/codeql-config.yml
+          config-file: .github/codeql/codeql-config.yml  # Specify the path to your config file
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
